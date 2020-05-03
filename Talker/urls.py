@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from talks.views import home_view, talk_detail_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_view),
+    path('talks/<int:talk_id>', talk_detail_view),
 ]
